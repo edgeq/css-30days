@@ -94,5 +94,62 @@
   right: 0;
   bottom: -6px;
   }
+/* GRADIENT BUTTONS */
+  .gradient-button-1 {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    padding: 20px 40px;
+    font-size: 1.4rem;
+    box-sizing: border-box;
+    background: linear-gradient(to top right, orangered, yellow);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border: solid 10px transparent;
+    border-image: linear-gradient(to top right, orangered, yellow);
+    border-image-slice: 1;
+    color: orangered;
+    transition: all 0.3s ease-in-out;
+  }
 
-  
+    .gradient-button-1:hover {
+      background: linear-gradient(to top right, orangered, yellow);
+      -webkit-background-clip: none;
+      -webkit-text-fill-color: white ;
+
+    }
+
+    .gradient-button-1:active {
+      background: linear-gradient(to top right, #551700, #ff99);
+      -webkit-background-clip: none;
+      -webkit-text-fill-color: grey ;
+
+    }
+
+
+  .animated-button-1 {
+    position: relative;
+    display: inline-block;
+    padding: 20px 40px;
+    font-size: 1.4rem;
+    background-color: #65f4a6;
+    background-image: url('pattern.png');
+    background-size: 40px 40px;
+    border: solid 1px #555;
+    color: white;
+    transition: all ease 0.3s;
+
+  }
+
+  .animated-button-1:hover {
+    animation: loading-button-animation 2s linear infinite;
+  }
+
+  @keyframes loading-button-animation {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: 40px 0;
+    }
+  }
