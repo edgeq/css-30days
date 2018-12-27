@@ -1,0 +1,90 @@
+/* ========================================
+
+    CODE YOUR STYLES BELOW!
+
+   ====================================== */
+
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+
+img {
+  max-width: 100%;
+}
+
+/* img filters */
+.sandbox img {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.sandbox img:hover {
+  cursor: crosshair;
+}
+
+.grayscale {
+  opacity: .8;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+
+.grayscale:hover {
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
+  opacity: 1;
+}
+
+.blur {
+  -webkit-filter: blur(1px);
+}
+
+.blur:hover {
+  -webkit-filter: blur(0);
+}
+
+.invert {
+  -webkit-filter: invert(1);
+}
+
+.invert:hover {
+  -webkit-filter: invert(0);
+}
+
+.sepia {
+  -webkit-filter: sepia(1);
+}
+
+.sepia:hover {
+  -webkit-filter: sepia(0);
+}
+
+/* hover effects */
+
+.hov-container {
+  position: relative;
+  /* background: lightgrey; */
+}
+
+.hov-container:hover .img__text {
+  opacity: 0;
+}
+
+.img__text {
+  position: absolute;
+  bottom: 0;
+  left: 1em;
+  padding-left: .7em;
+  color: white;
+  transition: opacity ease-out 250ms;
+
+}
+
+.img__title {
+  font-size: 2rem;
+  margin-bottom: 0;
+}
