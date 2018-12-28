@@ -73,7 +73,7 @@
     "content content content"
     "footer footer footer"
   ;
-  /* grid-gap: 1em; */
+  grid-gap: 1em;
 }
 .layout3 header {
   grid-area: header;
@@ -101,4 +101,9 @@
   display: flex;
   justify-content: space-between;
   grid-area: content;
+}
+
+
+.layout3 > .articles > article {
+  margin: 0 .25em;
 }
