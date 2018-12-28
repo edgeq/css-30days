@@ -1,0 +1,104 @@
+/* ========================================
+
+    The original tutorial uses floats...
+
+    SO I figured let's use this as an opportunity to practice flexbox and grid!
+
+   ====================================== */
+
+.layout1 {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-areas:
+  "header header"
+  "article aside"
+  "footer footer";
+  grid-gap: 1em;
+}
+
+.layout1 header {
+  grid-area: header;
+}
+
+.layout1 article {
+  grid-area: article;
+}
+
+.layout1 aside {
+  grid-area: aside;
+}
+
+.layout1 footer {
+  grid-area: footer;
+}
+
+/* LAYOUT 2 */
+.layout2 {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-areas:
+    "header header header"
+    "sidenav article sidebar"
+    "footer footer footer"
+  ;
+  grid-gap: 1em;
+}
+
+.layout2 header {
+  grid-area: header;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-gap: 1em;
+}
+
+.layout2 > header > .logo {
+   grid-column: 1 / span 1;
+}
+
+.layout2 > header > nav {
+   grid-column: 2 / span 1;
+}
+
+.layout2 footer {
+  grid-area: footer;
+}
+
+
+/* layout 3 */
+.layout3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    "header header header"
+    "content content content"
+    "footer footer footer"
+  ;
+  /* grid-gap: 1em; */
+}
+.layout3 header {
+  grid-area: header;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1em;
+}
+
+.layout3 > header > .logo {
+  grid-column: 3 / span 1;
+  order: 1;
+
+}
+
+.layout3 > header > nav {
+  grid-column: 1 / span 2;
+}
+
+.layout3 > footer {
+  grid-area: footer;
+}
+
+.layout3 > .articles {
+
+  display: flex;
+  justify-content: space-between;
+  grid-area: content;
+}
