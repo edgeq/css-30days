@@ -1,0 +1,277 @@
+/* ========================================
+
+    CODE YOUR STYLES BELOW!
+
+   ====================================== */
+
+:root {
+  --white: e7eef1;
+  --skin: #ffc966;
+}
+
+.mario-white {
+  background-color: var(--white);
+}
+.mario-red {
+  background-color: red;
+}
+.mario-skin {
+  background-color: var(--skin);
+}
+
+.mario-skin, .mario-skin-2 {
+  background-color: var(--skin);
+}
+
+.mario-black {
+  background-color: black;
+}
+
+.mario-brown {
+  background-color: brown;
+}
+
+.mario-blue, .mario-blue-2 {
+  background-color: blue;
+}
+
+.mario-yellow {
+  background-color: yellow;
+}
+
+
+.mario-block {
+  margin: 2em auto 0;
+  /* display: flex;
+  flex-flow: column;
+  flex: 1 0 100px; */
+  /*grid-template-columns: repeat(16, minmax(1em, 1fr));
+  grid-template-rows: repeat(16, minmax(1em, 1fr));*/
+
+  max-width: 300px;
+  min-width: 100px;
+}
+
+.mario-line-1,
+.mario-line-2,
+.mario-line-3,
+.mario-line-4,
+.mario-line-5,
+.mario-line-6,
+.mario-line-7,
+.mario-line-8,
+.mario-line-9,
+.mario-line-10,
+.mario-line-11,
+.mario-line-12,
+.mario-line-13,
+.mario-line-14,
+.mario-line-15,
+.mario-line-16
+{
+  display: grid;
+  grid-template-columns: repeat(16, minmax(1em, 1fr));
+  grid-template-rows: 1em;
+
+
+}
+
+.mario-line-2 .mario-red {
+  grid-column: 6 / span 5;
+}
+
+.mario-line-2 .mario-skin {
+  grid-column: 13 / span 3;
+}
+
+.mario-line-3 .mario-red {
+  grid-column: 5 / span 9;
+}
+
+.mario-line-3 .mario-skin {
+  grid-column: 14 / span 2;
+}
+
+/* USING GRID AREA TO OVERLAP */
+.mario-line-4 .mario-brown {
+  grid-area: 1 / 5 / 1 / span 3;
+}
+
+.mario-line-4 .mario-skin {
+  grid-area: 1 / 8 / 1 / span 4;
+}
+
+.mario-line-4 .mario-black {
+  grid-area: 1 / 11 / 1 / 10;
+}
+
+.mario-line-4 .mario-red {
+  grid-area: 1 / 13 / 1 / span 3;
+}
+
+
+.mario-line-5 .mario-brown {
+  grid-area: 1 / 4 / 1 / span 3;
+}
+
+.mario-line-5 .mario-skin {
+  grid-area: 1 / 6 / 1/ span 8;
+}
+
+.mario-line-5 .mario-skin-2{
+  grid-area: 1 / 5 / 1 / span 1;
+
+}
+
+.mario-line-5 .mario-black {
+  grid-area: 1 / 10 / 1 / span 1;
+}
+
+.mario-line-5 .mario-red {
+  grid-area: 1 / 14 / 1 / span 2;
+}
+
+.mario-line-6 .mario-brown {
+  grid-area: 1 / 4 / 1 / span 4;
+}
+
+.mario-line-6 .mario-skin {
+  grid-area: 1 / 5 / 1/ span 1;
+}
+
+.mario-line-6 .mario-skin-2 {
+  grid-area: 1 / 8 / 1 / span 7;
+}
+
+.mario-line-6 .mario-black {
+  grid-area: 1 / 11 / 1 / span 1;
+}
+
+.mario-line-6 .mario-red {
+  grid-area: 1 / 15 / 1 / span 1;
+}
+
+.mario-line-7 .mario-brown {
+  grid-area: 1/ 4 / 1 / span 2;
+}
+
+.mario-line-7 .mario-skin {
+  grid-area: 1/ 6 / 1 / span 4;
+}
+
+.mario-line-7 .mario-black {
+  grid-area: 1/ 10 / 1 / span 4;
+}
+
+.mario-line-7 .mario-red {
+  grid-area: 1/ 14 / 1 / span 2;
+}
+
+.mario-line-8 .mario-skin {
+  grid-area: 1/ 6 / 1 / span 7;
+}
+
+.mario-line-8 .mario-red {
+  grid-area: 1/ 13 / 1 / span 2;
+}
+
+.mario-line-8 .mario-red {
+  grid-area: 1/ 13 / 1 / span 2;
+}
+
+.mario-line-9 .mario-red {
+  grid-area: 1 / 3 / 1 / 13;
+}
+
+.mario-line-9 .mario-blue {
+  grid-area: 1 / 7 / 1 / span 1;
+}
+
+.mario-line-9 .mario-blue-2 {
+  grid-area: 1 / 11 / 1 / span 1;
+}
+
+.mario-line-9 .mario-brown {
+  grid-area: 1 / 16 / 1 / span 1;
+}
+
+.mario-line-10 .mario-skin {
+  grid-area: 1 / 1 / 1 / span 2;
+}
+
+.mario-line-10 .mario-red {
+  grid-area: 1 / 3 / 1 / span 9;
+}
+
+.mario-line-10 .mario-blue {
+  grid-area: 1 / 8 / 1 / span 1;
+}
+
+.mario-line-10 .mario-blue-2 {
+  grid-area: 1 / 12 / 1 / span 1;
+}
+
+.mario-line-10 .mario-brown {
+  grid-area: 1 / 15 / 1 / span 2;
+}
+
+.mario-line-11 .mario-skin {
+  grid-area: 1 / 1 / 1 / span 3;
+}
+
+.mario-line-11 .mario-red {
+  grid-area: 1 / 4 / 1 / span 4;
+}
+
+.mario-line-11 .mario-blue {
+  grid-area: 1 / 8 / 1 / span 7;
+}
+
+.mario-line-11 .mario-yellow {
+  grid-area: 1 / 12 / 1 / span 1;
+}
+
+.mario-line-11 .mario-brown {
+  grid-area: 1 / 15 / 1 / span 2;
+}
+
+.mario-line-12 .mario-skin {
+  grid-area: 1 / 2 / 1 / span 1;
+}
+
+.mario-line-12 .mario-blue {
+  grid-area: 1 / 5 / 1 / span 10;
+}
+
+.mario-line-12 .mario-red {
+  grid-area: 1 / 6 / 1 / span 1;
+  z-index: 2;
+}
+
+.mario-line-12 .mario-yellow {
+  grid-area: 1 / 9 / 1 / span 1;
+}
+
+.mario-line-12 .mario-brown {
+  grid-area: 1 / 15 / 1 / span 2;
+}
+
+.mario-line-13 .mario-brown {
+  grid-area: 1 / 3 / 1 / span 14;
+}
+
+.mario-line-13 .mario-blue {
+  grid-area: 1 / 6 / 1 / span 9;
+}
+
+.mario-line-14 .mario-brown {
+  grid-area: 1 / 2 / 1 / span 3;
+}
+
+.mario-line-14 .mario-blue {
+  grid-area: 1 / 5 / 1 / span 6;
+}
+
+.mario-line-15 .mario-brown {
+  grid-area: 1 / 2 / 1 / span 2;
+}
