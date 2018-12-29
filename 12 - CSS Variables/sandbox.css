@@ -3,3 +3,40 @@
     CODE YOUR STYLES BELOW!
 
    ====================================== */
+:root {
+  /* THIS IS REPRESENTATIVE OF DOM ROOT */
+}
+
+.sandbox {
+/* ELEMENTS AND VARIABLES HERE ARE SCOPED TO THIS SELECTOR */
+  --primary-color: orangered;
+  --secondary-color: hotpink;
+  --base-measurement: 20px;
+}
+
+.sandbox section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.sandbox section  h4{
+  flex: 1 0 100%;
+}
+
+.sandbox .box {
+  text-align: center;
+  --text-color: #f3f3f3;
+
+  color: var(--text-color);
+  background: var(--primary-color);
+  margin: var(--base-measurement);
+  height: calc(var(--base-measurement) * 10 );
+  width: calc(var(--base-measurement) * 10 );
+  line-height: calc(var(--base-measurement) * 10 );
+}
+
+.sandbox .box2 {
+  background-color: var(--secondary-color);
+}
