@@ -107,3 +107,73 @@
 .layout3 > .articles > article {
   margin: 0 .25em;
 }
+
+@media (max-width: 740px) {
+  .layout1 {
+
+    grid-template-columns: auto;
+    grid-template-areas:
+      "header"
+      "article"
+      "aside"
+      "footer"
+      ;
+      grid-gap: .25em;
+  }
+  .layout1 header {
+    grid-area: header;
+
+  }
+
+  .layout1 article {
+    grid-area: article;
+
+  }
+
+  .layout1 aside {
+    grid-area: aside;
+
+  }
+
+  .layout2 {
+
+    grid-template-columns: auto;
+    grid-template-areas:
+      "header"
+      "sidenav"
+      "article"
+      "sidebar"
+      "footer"
+      ;
+      grid-gap: .25em;
+  }
+
+  .layout3 {
+
+    grid-template-columns: auto;
+    grid-template-areas:
+      "header"
+      "content"
+      "footer"
+      ;
+      grid-gap: .25em;
+  }
+
+  .layout3 > .articles {
+
+    display: flex;
+    flex-direction: column;
+    grid-area: content;
+    /* margin: 1em 0; */
+  }
+
+  .layout3 > .articles > article {
+    margin: .25em 0;
+  }
+
+
+
+
+
+
+}
