@@ -18,8 +18,6 @@
   /* pointer-events ignores mouseclicks */
   pointer-events: none;
   opacity: 0; /* hidden until triggered */
-  -webkit-tranform: scale(0.5);
-          tranform: scale(0.5);
   transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
