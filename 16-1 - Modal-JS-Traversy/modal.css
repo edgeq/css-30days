@@ -10,6 +10,14 @@ html, body {
   box-sizing: inherit;
 }
 
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .button {
   background-color: coral;
   padding: 1em 2em;
@@ -31,7 +39,7 @@ html, body {
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.4);
-  border-radius: 8px;
+  /* border-radius: 8px; */
 }
 
 .modal-content {
