@@ -50,6 +50,7 @@ input[type="checkbox"]:checked ~ .modal {
          transition-delay: 0.1s;
 }
 
+/* POSITION THE ACTUAL MODAL */
 .modal {
   position: fixed;
   top: 50%;
@@ -67,7 +68,7 @@ input[type="checkbox"]:checked ~ .modal {
   transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
-
+/* STYLE THE MODAL CONTENT  */
 .modal__content {
   display: block;
   padding: 30px;
