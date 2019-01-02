@@ -1,0 +1,181 @@
+/* ========================================
+
+    CODE YOUR STYLES BELOW!
+
+   ====================================== */
+
+/* STYLE THE CONTAINER */
+.path {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  background: #4a4a4a;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* ADD DOTS TO THE CONTAINER USING ::AFTER */
+/* TODO: find a better way to create dots. */
+.path::after{
+  content: "";
+  position: absolute;
+  display: block;
+  border-top: 12px dotted white;
+  width: 90%;
+  top: 50%;
+  left: 5%;
+  margin-top: -6px;
+}
+/* POSITION PACMAN ABSOLUTELY WITHIN .path  */
+.pacman {
+  position: absolute;
+  z-index: 99;
+  top: 50%;
+  animation: moveForward 5s linear infinite;
+  animation-delay: 1.5s;
+  left: -10%;
+
+}
+/* CREATE A SHAPES FROM ::before, ::after  */
+.pacman::before, .pacman::after {
+  content: "";
+  display: block;
+  height: 0;
+  width: 0;
+  position: absolute;
+  border: solid 30px yellow;
+  /* pull box up */
+  margin-top: -30px;
+  /* make box a circle */
+  border-radius: 50%;
+  /* carve out bottom of mouth from circle */
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  animation: mouthtop 700ms ease infinite;
+
+
+}
+
+.pacman::after {
+  /* margin-left: 165px; */
+  /* reset border */
+  border-color: yellow;
+  /* carve out top of mouth from circle  */
+  border-right-color: transparent;
+  border-top-color: transparent;
+  animation: mouthbottom 700ms ease infinite;
+
+}
+
+.ghost {
+  position: absolute;
+  z-index: 99;
+  top: 50%;
+  left: 20%;
+  height: 70px;
+  width: 60px;
+  margin-top: -35px;
+  background: red;
+  border-top-left-radius: 70px;
+  border-top-right-radius: 70px;
+  animation: moveForward 5s linear infinite, blinky 0.5s linear infinite;
+}
+
+.ghost::before, .ghost::after {
+  content: "";
+  position: absolute;
+  background: white;
+  height: 25px;
+  width: 20px;
+  border-radius: 100%;
+  top: 15px;
+  left: 4px;
+}
+.ghost::after {
+  left: 28px;
+}
+
+.eyes::before, .eyes::after {
+  content: "";
+  position: absolute;
+  background: aquamarine;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  top: 25px;
+  left: 5px;
+  z-index: 99;
+  animation: peeperLeft 0.7s linear infinite;
+}
+
+.eyes::after {
+  left: 30px;
+  animation: peeperRight 0.7s linear infinite;
+
+}
+
+.skirt, .skirt::before, .skirt::after {
+  position: absolute;
+  width: 0;
+  border: solid 10px #4a4a4a;
+  border-top-color: transparent;
+  bottom: -10px;
+}
+
+.skirt::before {
+  content: "";
+
+  left: 10px;
+}
+
+.skirt::after {
+  content: "";
+
+  left: 30px;
+}
+
+@keyframes moveForward {
+  0% {
+    left: -20%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes mouthtop {
+  50% {
+    transform: rotate(44.3deg);
+  }
+}
+
+@keyframes mouthbottom {
+  50% {
+    transform: rotate(-44.3deg);
+  }
+}
+
+@keyframes blinky {
+  50% {
+    background: hotpink;
+  }
+}
+
+@keyframes peeperLeft {
+  0%, 100% {
+    left: 5px;
+  }
+  50% {
+    left: 10px;
+  }
+}
+
+@keyframes peeperRight {
+  0%, 100% {
+    left: 30px;
+  }
+  50% {
+    left: 35px;
+  }
+}
