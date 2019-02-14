@@ -9,7 +9,9 @@
        &::before {
         position: absolute;
         z-index: 2;
-        display: none;
+        // display: none;
+        visibility: hidden;
+        opacity: 0;
         width: 200px;
         max-width: 200px;
         padding: 10px;
@@ -20,23 +22,33 @@
         color: white;
         content: attr(title);
         @content;
+        transition: visibility 0s, opacity 0.5s linear;
+
+
     }
+
+}
+
     //tooltip arrow
+   @mixin arrowPoint($from, $to){
     &::after {
         position: absolute;
-        z-index: 1;
-        display: none;
+        z-index: 2;
+        // display: none;
+        visibility: hidden;
+        opacity: 0;
         width: 0;
         height: 0;
-        border: 6px solid transparent;
-        border-top-color: rgba(0, 0, 0, 0.5);
-        border-bottom-width: 0;
+        border: 5px solid transparent;
         content: "";
-        bottom: 100%;
-        left: 50%;
+        border-#{$from}-color: rgba(0, 0, 0, 0.5);
+        border-#{$to}-width: 0;
+        @content;
+        transition: visibility 0s, opacity 0.5s linear;
+
+
     }
    }
-
 
 /* ========================================
 
@@ -45,23 +57,76 @@
    ====================================== */
 .tooltip {
     position: relative;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
     height: 60px;
     width: 250px;
-    background: #f2395a;
+    background: #16c6d3;
     color: white;
     text-align: center;
     line-height: 60px;
     font-size: 18px;
     margin: 0 auto;
-    @include tooltip(){
-        bottom: calc(100% + 5px);
-        top: -50px;
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-    };
+
+    &--top{
+        @include tooltip(){
+            bottom: calc(100% + 5px);
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+
+        }
+        @include arrowPoint(top, bottom){
+            bottom: 100%;
+            left: 50%;
+        }
+    }
+
+    &--right {
+        @include tooltip() {
+            top: 50%;
+            left: calc(100% + 5px);
+            transform: translateY(-50%);
+        }
+        @include arrowPoint(right, left){
+            left: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+
+    &--bottom {
+        @include tooltip(){
+            top: calc(100% + 5px);
+            left: 50%;
+            transform: translateX(-50%);
+
+        }
+        @include arrowPoint(bottom, top){
+            top: 100%;
+            left: 50%;
+        }
+    }
+
+    &--left {
+        @include tooltip(){
+            right: calc(100% + 5px);
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        @include arrowPoint(left, right){
+            right: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+
     &:hover::before,
     &:hover::after {
-        display: inline-block;
+        // display: inline-block;
+        visibility: visible;
+        opacity: 1;
+
+
     }
 }
