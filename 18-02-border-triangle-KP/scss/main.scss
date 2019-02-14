@@ -1,0 +1,65 @@
+body {
+  font-family: basic-sans, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.125em;
+  line-height: 1.6;
+  color: #333;
+  background: #ddd;
+}
+.content {
+  background: white;
+  width: 70vw;
+  padding: 3em;
+  box-shadow: 0 0 3em rgba(0, 0, 0, .15);
+}
+
+.title {
+  margin: 0 0 .5em;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 3rem;
+  color: #ee6352;
+  line-height: .8;
+}
+
+p {color: rgba(black, .6);}
+
+@mixin triangle($side, $color) {
+  position: relative;
+
+  &::after{
+    content: '';
+    position: absolute;
+    left: -1.25em;
+    bottom: .25em;
+    top: -.25em;
+    border: 1em solid transparent;
+    border-#{$side}-color: $color;
+    // background: pink;
+    // width: 5em;
+    // height: 5em;
+    // border magic
+    // LONG WAY
+    // border-width: 1em;
+    // border-style: solid;
+    // border-left-color: red;
+    // border-right-color: transparent;
+    // border-top-color: transparent;
+    // border-bottom-color: transparent;
+  }
+}
+
+.important {
+  position: relative;
+  color: rgba(black, .9);
+  @include triangle(left, green);
+
+}
+.title {
+  @include triangle(left, blue);
+
+}
