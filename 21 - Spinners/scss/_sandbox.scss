@@ -1,0 +1,101 @@
+/* ========================================
+    CODE YOUR STYLES BELOW!
+   ====================================== */
+$box-shadow: inset -5px 0 0 5px currentColor;
+@mixin spinnerStyle($size){
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: $size + px;
+    height: $size + px;
+    border-radius: $size + px;
+}
+.spinner-1 {
+    @include spinnerStyle(64);
+    &::before {
+        position: absolute;
+        content: "";
+        width: 64px;
+        height: 64px;
+        border-radius: 64px;
+        color: #323b40;
+        box-shadow: $box-shadow;
+        clip: rect(0, 64px, 32px, 0);
+        animation: rotate 1s infinite linear;
+    }
+}
+
+.spinner-2 {
+    @include spinnerStyle(16);
+    background-color: #323b40;
+    margin: 32px;
+    border-radius: 16px;
+    &::before,
+    &::after {
+        @include spinnerStyle(16);
+        position: absolute;
+        content: "";
+        background-color: inherit;
+
+    }
+    &::before {
+        transform: translateX(-120%);
+        transform-origin: 32px 50%;
+        animation: orbit-1 1s infinite linear;
+    }
+    &::after {
+        transform: translateX(120%);
+        transform-origin: -16px 50%;
+        animation: orbit-2 1s infinite linear;
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+        // opacity: .8;
+    }
+    100% {
+        transform: rotate(360deg);
+        // opacity: .6;
+    }
+}
+
+@keyframes orbit-1 {
+    0% {
+        transform: translateX(-120%)
+                    rotate(180deg);
+
+    }
+    30% {
+        transform: translateX(-120%)
+                    rotate(0);
+    }
+    70% {
+        transform: translateX(-120%)
+                    rotate(0);
+    }
+    100% {
+        transform: translateX(-120%)
+                    rotate(-180deg);
+    }
+}
+@keyframes orbit-2 {
+    0% {
+        transform: translateX(120%)
+                    rotate(180deg);
+
+    }
+    30% {
+        transform: translateX(120%)
+                    rotate(0);
+    }
+    70% {
+        transform: translateX(120%)
+                    rotate(0);
+    }
+    100% {
+        transform: translateX(120%)
+                    rotate(-180deg);
+    }
+}
