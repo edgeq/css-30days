@@ -1,0 +1,96 @@
+/* ========================================
+    MIXINS
+   ====================================== */
+$inner-shadow: inset 0 1px 2px rgba(black, .25);
+$outer-shadow: 0 1px rgba(white, 1);
+$border-radius: 10px 0 0 10px;
+$colors: (
+    pink: #f2395a,
+    red: #b90c2b,
+    cyan: cyan,
+);
+@mixin barStyle(){
+    position: relative;
+    display: block;
+    padding: 5px;
+    font-size: 16px;
+    line-height: 16px;
+    border-radius: 30px;
+    background: rgba(black, .1);
+    box-shadow: $inner-shadow, $outer-shadow;
+}
+
+@mixin span(){
+    span {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        height: 20px;
+        border-radius: $border-radius;
+        overflow: hidden;
+        background-size: 100%;
+        background-image: linear-gradient(to bottom, #f2395a, #b90c2b);
+        @include animation-1();
+    }
+}
+@mixin animation-1 {
+    animation: progress-bar-1 6s infinite ease-in;
+
+}
+
+@mixin animation-2 {
+    animation: progress-bar-after-1 0.5s infinite linear;
+
+}
+/* ========================================
+    CODE YOUR STYLES BELOW!
+   ====================================== */
+
+.animation-bar-1 {
+    @include barStyle();
+    @include span();
+    span::after {
+       position: absolute;
+       top:0;
+       left:0;
+       right:0;
+       bottom:0;
+       content: "";
+       background-size: 100%;
+       background: linear-gradient(45deg, #fff 25%,
+                                    rgba(0,0,0,0) 25%,
+                                    rgba(0,0,0,0) 50%,
+                                    #fff 50%,
+                                    #fff 75%,
+                                    rgba(0,0,0,0) 75%,
+                                    rgba(0,0,0,0));
+        background-size: 30px 30px;
+        opacity: 0.3;
+        @include animation-2();
+    }
+
+}
+
+.animation-bar-2 {
+    @include barStyle();
+    @include span()
+
+
+}
+
+@keyframes progress-bar-1 {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 60%;
+    }
+}
+@keyframes progress-bar-after-1 {
+    0% {
+        background-position: 0 100%;
+    }
+    100% {
+        background-position: 30px 100%;
+    }
+}
