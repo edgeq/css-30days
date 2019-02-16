@@ -1,0 +1,76 @@
+/* ========================================
+    CODE YOUR STYLES BELOW!
+   ====================================== */
+$grey: rgb(200, 200, 200);
+$white: rgb(255,255,255);
+$black: rgb(49,49,49);
+$brown: rgb(52,26,0);
+
+$coffee: rgb(14,14,14);
+$crema: rgb(185, 144, 18);
+$espuma: rgb(252, 232, 185);
+$cupShadow: rgb(129,129,129);
+$cupRim: $white;
+$cupShadowOuter: $grey;
+
+
+$box-shadow-1: 5px 0px 1px rgba($grey, 0.8);
+$box-shadow-2: 10px 35px 30px 7px rgba($black, 0.1);
+$box-shadow-3: 5px 5px rgba($espuma, 0.5);
+   
+$gradient-handle: linear-gradient(180deg,
+                    $grey 5%,
+                    $white 50%,
+                    $grey 95%);
+$gradient-crema: radial-gradient(
+    closest-side at 50%,
+    $coffee 65%,
+    $crema 75%,
+    $cupShadow 75%,
+    $cupRim 95%,
+    $cupShadowOuter 100%
+
+);
+$gradient-coffee: linear-gradient(
+    120deg,
+    $coffee 0%,
+    $brown 100%
+);
+
+.coffee {
+    position: relative;
+
+    .handle {
+        position: absolute;
+        width: 127px;
+        height: 50px;
+        top: 50%;
+        right: 40px;
+        border-radius: 50px;
+        transform: translateY(-50%);
+        box-shadow: $box-shadow-1;
+        background: $gradient-handle;    
+    }
+
+    .coffee-cup {
+        position: relative;
+        width: 462px;
+        height: 462px;
+        border-radius: 50%;
+        z-index: 3;
+        box-shadow: $box-shadow-2;
+        background-image: $gradient-crema;
+    }
+    .brew {
+        position: absolute;
+        width: 316px;
+        height: 316px;
+        border-radius: 50%;
+        z-index: 4;
+        box-shadow: $box-shadow-3;
+        top: 50%;
+        left: 70px;
+        transform: translateY(-50%);
+        background-image: $gradient-coffee;
+    }
+}
