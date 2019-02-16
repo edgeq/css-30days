@@ -1,0 +1,57 @@
+/* ========================================
+    CODE YOUR STYLES BELOW!
+   ====================================== */
+@mixin slideStyles(){
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+
+@mixin slideImg(){
+    display: inline-block;
+    vertical-align: middle;
+}
+
+@mixin slideContent(){
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: rgba(red, 0.5);
+    color: white;
+    transition: transform 0.3s ease;
+    
+}
+
+.slide {
+    @include slideStyles();
+    &-content {
+        @include slideContent();
+    }
+    img {
+        @include slideImg();
+    }
+    &:hover &-content {
+        transform: translate(0,0);
+    }
+    &-top &-content {
+        transform: translate(0, -100%);
+    }
+    &-right &-content {
+        transform: translate(100%, 0);
+    }
+    &-bottom &-content {
+        transform: translate(0, 100%);
+    }
+    &-left &-content {
+        transform: translate(-100%, 0);
+    }
+
+}
